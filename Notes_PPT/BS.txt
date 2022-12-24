@@ -1,0 +1,41 @@
+//To write into a file using byte stream
+import java.io.*;
+class output
+{public static void main(String args[])
+{	String s ="This is my file";
+int a=5;
+Double d=5.35;
+try
+{
+FileOutputStream fos= new FileOutputStream("abcd.txt");
+DataOutputStream dos = new DataOutputStream(fos);
+dos.writeBytes(s);
+dos.writeInt(a);
+dos.writeDouble(d);
+dos.close();
+}
+catch(IOException ex)
+{ex.printStackTrace();}
+}}
+
+
+
+
+//To read from a file using byte stream
+import java.io.*;
+class input
+{public static void main(String args[])
+{
+try
+{	FileInputStream fin= new FileInputStream("abcd.txt"); //to read data from a file in bytes
+	DataInputStream din = new DataInputStream(fin); // read primitive Java data types
+		String line=null;
+		while((line =din.readLine())!=null)
+		{
+			System.out.println(line);
+		}
+	din.close();
+}
+catch(Exception ex)
+{ex.printStackTrace();}
+}}

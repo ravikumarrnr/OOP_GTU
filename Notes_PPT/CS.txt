@@ -1,0 +1,39 @@
+//To write into a file using character stream
+import java.io.*;
+class writerDemo
+{
+public static void main(String[] args)
+{
+try
+{
+FileWriter fw = new FileWriter("abc.txt");
+fw.write("Hello, Good Morning");  // fw.write("123");
+fw.close();
+}
+catch(IOException ex)
+{ex.printStackTrace();}
+}}
+
+
+
+//To read from a file using character stream
+import java.io.*;
+class readerDemo
+{
+public static void main(String[] args)
+{
+try
+{
+File f1= new File("abc.txt");
+FileReader fr = new FileReader(f1);
+
+BufferedReader br=new BufferedReader(fr); //chaining
+String line=null;
+while((line=br.readLine()) !=null)
+{
+System.out.println(line);
+}
+br.close();
+}
+catch(Exception ex)
+{ex.printStackTrace();} }}
